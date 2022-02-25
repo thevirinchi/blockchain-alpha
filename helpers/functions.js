@@ -1,0 +1,1 @@
+module.exports = isUsable = (data) => {return(data !== undefined && data !== null)}
