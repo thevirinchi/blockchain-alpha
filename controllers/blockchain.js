@@ -5,5 +5,8 @@ exports.getBlockchain = (req, res, nex) => {
 }
 
 exports.postBlockchain = (req, res, nex) => {
-	res.json(AlphaBlockChain.postBlock(req.body.block))
+	const lastBlock = AlphaBlockChain.getLastBlock()
+	console.log({lastBlock})
+	const proof = AlphaBlockChain.generateProofOfWork(lastBlock.proof)
+	res.json(AlphaBlockChain.postBlock(proof, req.body.block))
 }
