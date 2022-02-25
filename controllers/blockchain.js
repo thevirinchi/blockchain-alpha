@@ -6,7 +6,11 @@ exports.getBlockchain = (req, res, nex) => {
 
 exports.postBlockchain = (req, res, nex) => {
 	const lastBlock = AlphaBlockChain.getLastBlock()
-	console.log({lastBlock})
+	const prevHash = AlphaBlockChain.generateBlockHash(lastBlock)
 	const proof = AlphaBlockChain.generateProofOfWork(lastBlock.proof)
-	res.json(AlphaBlockChain.postBlock(proof, req.body.block))
+	res.json(AlphaBlockChain.postBlock(proof, prevHash))
+}
+
+exports.verifyBlockchain = (req, res, nex) => {
+	res.json(AlphaBlockChain.isValid())
 }
