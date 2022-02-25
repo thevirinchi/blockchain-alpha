@@ -1,0 +1,22 @@
+{
+  "name": "blockchain-alpha",
+  "version": "1.0.0",
+  "description": "Basic blockchain implementation using express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z3t4z00k/blockchain-alpha.git"
+  },
+  "keywords": [
+    "blockchain"
+  ],
+  "author": "z3t4z00k",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/z3t4z00k/blockchain-alpha/issues"
+  },
+  "homepage": "https://github.com/z3t4z00k/blockchain-alpha#readme"
+}
