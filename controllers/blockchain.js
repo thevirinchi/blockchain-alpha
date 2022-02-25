@@ -5,5 +5,12 @@ exports.getBlockchain = (req, res, nex) => {
 }
 
 exports.postBlockchain = (req, res, nex) => {
-	res.json(AlphaBlockChain.postBlock(req.body.block))
+	const lastBlock = AlphaBlockChain.getLastBlock()
+	const prevHash = AlphaBlockChain.generateBlockHash(lastBlock)
+	const proof = AlphaBlockChain.generateProofOfWork(lastBlock.proof)
+	res.json(AlphaBlockChain.postBlock(proof, prevHash))
+}
+
+exports.verifyBlockchain = (req, res, nex) => {
+	res.json(AlphaBlockChain.isValid())
 }
